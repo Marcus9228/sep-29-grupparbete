@@ -26,21 +26,22 @@ namespace sep_29_grupparbete
         {
             int totalMembers = 0;
             int totalBooks = 0;
+            Console.WriteLine($"Total amount of members: {totalMembers}");
             foreach (Member member in members)
             {
                 totalMembers++;
             }
-            Console.WriteLine($"Amount of members: {totalMembers}");
-            Console.WriteLine("All book titles in library:");
+            Console.WriteLine($"Total amount of books registered in the library: {totalBooks}");
             foreach (Book book in Librarians[0].LibraryCollection)
             {
                 totalBooks++;
             }
+            Console.WriteLine("All available book titles in library: ");
             foreach (Shelf shelf in Shelves)
             {
                 shelf.PrintAllBooks();
             }
-            Console.WriteLine($"Amount of books in library: {totalBooks}");
+            Console.WriteLine("All transactions for each registered member: ");
             foreach (Member member in members)
             {
                 member.ViewTransactionHistory();
@@ -92,6 +93,5 @@ namespace sep_29_grupparbete
             get { return transactions; }
             set { transactions = value; }
         }
-
     }
 }
